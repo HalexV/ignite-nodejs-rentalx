@@ -19,5 +19,5 @@ databaseConnection
     app.listen(3333, () => console.log('Server is running!'));
   })
   .catch((error) => {
-    console.log('Error: ', error.message);
+    console.error('Error: ', error.message);
   });
