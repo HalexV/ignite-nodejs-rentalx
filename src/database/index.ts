@@ -1,3 +1,6 @@
-import { createConnection } from 'typeorm';
+import { createConnection, getConnectionOptions } from 'typeorm';
 
-createConnection();
+export default getConnectionOptions().then(async (connectionOptions) => {
+  Object.assign(connectionOptions, { host: 'database_ignite' });
+  await createConnection(connectionOptions);
+});
